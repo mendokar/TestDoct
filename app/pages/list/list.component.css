@@ -1,0 +1,17 @@
+.id{
+    text-align: center;
+    vertical-align: center;
+    font-size: 20;
+    color: black;
+}
+
+.more{
+    margin: 10;
+    font-size: 20;
+    color: black;
+}
+
+.separador{
+    border-bottom-width: 1;
+    border-bottom-color: lightgrey;
+}

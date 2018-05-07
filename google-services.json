@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "852569985507",
+    "firebase_url": "https://doctor-c8f17.firebaseio.com",
+    "project_id": "doctor-c8f17",
+    "storage_bucket": "doctor-c8f17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852569985507:android:42494586db9c2518",
+        "android_client_info": {
+          "package_name": "org.nativescript.TestDoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852569985507-gc23rvmmt4f998ni2lfrj5rsus0314a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7KIco8CvUZ3-hFzzQuIn_ZD8XUkziLco"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
