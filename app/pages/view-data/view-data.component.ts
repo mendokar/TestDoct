@@ -40,9 +40,6 @@ export class ViewDataComponent implements OnInit {
 					this._image = res[i].image;
 					this._description = res[i].description;
 				}
-
-				
-				
 			}
 		});
 	}

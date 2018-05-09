@@ -1,0 +1,13 @@
+<StackLayout>
+    <GridLayout rows="*" columns="*,*,*" *ngFor="let item of arregloNumber" class="option" (tap)="viewList()">
+        <GridLayout  row="0" col="0" class="number">
+            <Label horizontalAlignment="center" [text]="item.number" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout  row="0" col="1" class="number">
+            <Label horizontalAlignment="center" [text]="item.letter" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout  row="0" col="2" class="number">
+            <Label horizontalAlignment="center" [text]="item.numbers" textWrap="true"></Label>
+        </GridLayout>
+    </GridLayout>
+</StackLayout>

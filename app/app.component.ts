@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 import * as _firebase from "nativescript-plugin-firebase";
 import { Page } from "tns-core-modules/ui/page/page";
 
+import { registerElement } from "nativescript-angular/element-registry";
+import { Gif } from "nativescript-gif";
+registerElement("Gif", () => Gif);
+
 
 @Component({
   selector: "my-app",

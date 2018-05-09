@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ServiceFirebase } from '~/services/firebase.service';
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
 //import { ActivatedRoute } from '@angular/router';
+import { ModalDialogService } from 'nativescript-angular/modal-dialog';
 
 import { setString} from "application-settings"
 import { RouterExtensions } from 'nativescript-angular/router';
+import { ModalComponent } from '~/pages/list/modal/modal.component';
 
 @Component({
 	selector: 'list',
@@ -19,7 +21,8 @@ export class ListComponent implements OnInit {
 
 	_serviceFirebase: ServiceFirebase;
 	_arregloExamples = [];
-	constructor(private _routEx:RouterExtensions) { 
+	constructor(private _routEx:RouterExtensions,private vcRef: ViewContainerRef,
+		private modal: ModalDialogService) { 
 		this._serviceFirebase = new ServiceFirebase();
 	}
 
@@ -48,6 +51,34 @@ export class ListComponent implements OnInit {
 
 	public viewData(id){
 		setString("idData",''+id)
-		this._routEx.navigate(["viewData"])
+		//
+
+		this.mostrarMensaje();
 	}
+
+	/**
+     * mostrarConfiguracionHorario
+     */
+	public mostrarMensaje() {
+
+		//setString("verTuto", "true");
+
+		//console.log(getString("verTuto"));
+
+		let options = {
+			context: {},
+			fullscreen: false,
+			viewContainerRef: this.vcRef
+		};
+		this.modal.showModal(ModalComponent, options).then(res => {
+
+			if (res !== undefined) {
+
+			}
+
+
+		});
+	}
+
+
 }

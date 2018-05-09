@@ -1,0 +1,16 @@
+.option{
+    border-bottom-color: lightgray;
+    border-bottom-width: 1;
+    height: 60;
+}
+
+.number{
+    border-right-width: 1;
+    border-right-color: lightgrey;
+    vertical-align: center;
+}
+
+Label{
+    font-size: 20;
+    color: black;
+}

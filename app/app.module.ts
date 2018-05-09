@@ -6,13 +6,15 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { AppComponent } from "./app.component";
 
 import { NavegateRouters, Routes } from "./app.routing";
+import { ModalComponent } from "~/pages/list/modal/modal.component";
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, ...NavegateRouters],
+  declarations: [AppComponent, ...NavegateRouters,ModalComponent],
   bootstrap: [AppComponent],
+  entryComponents:[ModalComponent],
   imports: [NativeScriptModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule,
