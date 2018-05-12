@@ -1,14 +1,13 @@
-<ActionBar title="Title" icon="" class="action-bar">
+<ActionBar title="Lista Datos" icon="" class="action-bar">
 </ActionBar>
 <ScrollView>
         <StackLayout>
-            <Label text="List Example" class="h2" textWrap="true"></Label>
-            
+            <Label text="List Example" class="h2" textWrap="true"></Label>            
             <GridLayout rows="*" columns="*,*" *ngFor="let item of _arregloExamples" class="separador">
-                <Label class="id" row="0" col="0" [text]="item.id" textWrap="true"></Label>
+                <Label class="id" row="0" col="0" [text]="item._id" textWrap="true"></Label>
                 <GridLayout row="0" col="1" rows="*,*" columns="*">
-                    <Label class="des" [text]="item.description" row="0" col="0" textWrap="true" ></Label>
-                    <Label class="more" text="..." row="1" col="0" textWrap="true" (tap)="viewData(item.key)"></Label>                
+                    <Label class="des" [text]="item._title" row="0" col="0" textWrap="true" ></Label>
+                    <Label class="more" text="..." row="1" col="0" textWrap="true" (tap)="viewData(item._id)"></Label>                
                 </GridLayout>
             </GridLayout>
         </StackLayout>

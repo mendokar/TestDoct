@@ -15,6 +15,10 @@ import { RouterExtensions } from 'nativescript-angular/router';
 
 export class ViewDataComponent implements OnInit {
 
+	opcion: string;
+	_gif;
+	_viewImage = false;
+	_viewGif = false;
 	_serviceFirebase: ServiceFirebase;
 	idData;
 	_title;
@@ -25,6 +29,7 @@ export class ViewDataComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.opcion = getString("opcion");
 		this.idData = getString("idData")
 		this.getData();
 	 }
@@ -32,14 +37,23 @@ export class ViewDataComponent implements OnInit {
 	public getData(){
 		this._serviceFirebase.searchData().then(response => {
 			console.log("Respuesta Del Usuario" + JSON.stringify(response));
-			let res = response.value;
+			let res = response.value["101"].items;
 			for (let i = 0; i < res.length; i++) {
 				
 				if(parseInt(this.idData) === i){
 					this._title = res[i].title;
 					this._image = res[i].image;
+					this._gif = res[i].gif;
 					this._description = res[i].description;
 				}
+			}
+
+			if(this._image !== undefined && this.opcion === "image"){
+				this._viewImage = true;
+			}
+
+			if(this._gif !== undefined && this.opcion === "gif"){
+				this._viewGif = true;
 			}
 		});
 	}

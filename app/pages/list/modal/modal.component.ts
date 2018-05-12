@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { ModalDialogParams } from 'nativescript-angular/directives/dialogs';
 import { Page } from 'tns-core-modules/ui/page/page';
+import { setString } from 'tns-core-modules/application-settings/application-settings';
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
@@ -26,7 +27,8 @@ export class ModalComponent implements OnInit {
 	/**
 	 * viewData
 	 */
-	public viewData() {
+	public viewData(opcion) {
+		setString("opcion",''+opcion);
 		this._routEx.navigate(["viewData"])
 		this._modal.closeCallback();
 	}

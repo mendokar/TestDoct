@@ -34,7 +34,7 @@ export class ServiceFirebase implements OnInit {
                     return (JSON.stringify(queryResult.value));
                 }
             },
-            '/examples/', options
+            '/country/', options
         );
     }
 
