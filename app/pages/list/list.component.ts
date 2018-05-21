@@ -6,7 +6,7 @@ import { ServiceFirebase } from '~/services/firebase.service';
 //import { ActivatedRoute } from '@angular/router';
 import { ModalDialogService } from 'nativescript-angular/modal-dialog';
 
-import { setString } from "application-settings"
+import { setString, getString } from "application-settings"
 import { RouterExtensions } from 'nativescript-angular/router';
 import { ModalComponent } from '~/pages/list/modal/modal.component';
 
@@ -21,12 +21,14 @@ export class ListComponent implements OnInit {
 
 	_serviceFirebase: ServiceFirebase;
 	_arregloExamples = [];
+	_title;
 	constructor(private _routEx: RouterExtensions, private vcRef: ViewContainerRef,
 		private modal: ModalDialogService) {
 		this._serviceFirebase = new ServiceFirebase();
 	}
 
 	ngOnInit() {
+		this._title = getString("title");
 		this.getData();
 	}
 
@@ -91,6 +93,13 @@ export class ListComponent implements OnInit {
 
 
 		});
+	}
+
+	/**
+	 * back
+	 */
+	public back() {
+		this._routEx.back();
 	}
 
 

@@ -1,13 +1,15 @@
-<ActionBar title="Lista Datos" icon="" class="action-bar">
+<ActionBar [title]="_title" class="action-bar">
+    <NavigationButton text="" android.systemIcon="ic_menu_back" (tap)="back()"></NavigationButton>
 </ActionBar>
 <ScrollView>
-        <StackLayout>
-            <Label text="List Example" class="h2" textWrap="true"></Label>            
+        <StackLayout>                       
             <GridLayout rows="*" columns="*,*" *ngFor="let item of _arregloExamples" class="separador">
                 <Label class="id" row="0" col="0" [text]="item._id" textWrap="true"></Label>
-                <GridLayout row="0" col="1" rows="*,*" columns="*">
-                    <Label class="des" [text]="item._title" row="0" col="0" textWrap="true" ></Label>
-                    <Label class="more" text="..." row="1" col="0" textWrap="true" (tap)="viewData(item._id)"></Label>                
+                <GridLayout row="0" col="1" rows="*,*,*" columns="*">
+                    <Label horizontalAlignment="right" class="more" text="..." row="0" col="0" textWrap="true" (tap)="viewData(item._id)"></Label>
+                    <Label class="des" [text]="item._title" row="1" col="0" textWrap="true" ></Label>
+                    <Label class="des" [text]="item._name" row="2" col="0" textWrap="true" ></Label>
+                            
                 </GridLayout>
             </GridLayout>
         </StackLayout>

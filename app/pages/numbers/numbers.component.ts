@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { Page } from 'tns-core-modules/ui/page/page';
+import { setString } from 'tns-core-modules/application-settings/application-settings';
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
@@ -13,42 +15,65 @@ import { RouterExtensions } from 'nativescript-angular/router';
 
 export class NumbersComponent implements OnInit {
 
-	constructor(private _routEx:RouterExtensions) { }
+	constructor(private _routEx:RouterExtensions,private page:Page) { 
+		this.page.actionBarHidden = true;
+	}
 
 	ngOnInit() { }
 
 	arregloNumber = [
 		{
 			number:"1",
-			letter:"A",
-			numbers:"5"
+			letter:"Australia",
+			
 		},
 		{
-			number:"1",
-			letter:"A",
-			numbers:"5"
+			number:"2",
+			letter:"Bengladesh",
+			
 		},
 		{
-			number:"1",
-			letter:"A",
-			numbers:"5"
+			number:"3",
+			letter:"Colombia",
+
 		},
 		{
-			number:"1",
-			letter:"A",
-			numbers:"5"
+			number:"4",
+			letter:"Denmark",
+			
 		},
 		{
-			number:"1",
-			letter:"A",
-			numbers:"5"
+			number:"5",
+			letter:"England",
+
+		},
+		{
+			number:"6",
+			letter:"India",
+			
+		},
+		{
+			number:"7",
+			letter:"Egypt",
+
+		},
+		{
+			number:"8",
+			letter:"USA",
+			
+		},
+		{
+			number:"9",
+			letter:"Spain",
+
 		}
 	]
 
 	/**
 	 * viewList
 	 */
-	public viewList() {
+	public viewList(title) {
+		setString("title",''+title);
 		this._routEx.navigate(["list"])
 	}
 }

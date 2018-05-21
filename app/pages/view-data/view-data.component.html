@@ -1,9 +1,9 @@
-<ActionBar title="View Data">
+<ActionBar [title]="_titles">
     <NavigationButton text="" android.systemIcon="ic_menu_back" (tap)="getBack()"></NavigationButton>
 </ActionBar>
 <ScrollView>
     <StackLayout>
-        <Label class="h1" horizontalAlignment="center" [text]="_title" textWrap="true"></Label>
+        <Label class="h1" horizontalAlignment="center" [text]="" textWrap="true"></Label>
         <Image *ngIf="_viewImage" [src]="_image"></Image>
         <Gif *ngIf="_viewGif" [src]="_gif" height="200" ></Gif>
         <Label class="des" horizontalAlignment="center" [text]="_description" textWrap="true"></Label>        

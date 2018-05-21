@@ -22,6 +22,7 @@ export class ViewDataComponent implements OnInit {
 	_serviceFirebase: ServiceFirebase;
 	idData;
 	_title;
+	_titles;
 	_image;
 	_description;
 	constructor(private _routEx:RouterExtensions) { 
@@ -50,10 +51,12 @@ export class ViewDataComponent implements OnInit {
 
 			if(this._image !== undefined && this.opcion === "image"){
 				this._viewImage = true;
+				this._titles = "View Image";
 			}
 
 			if(this._gif !== undefined && this.opcion === "gif"){
 				this._viewGif = true;
+				this._titles = "View Gif";
 			}
 		});
 	}

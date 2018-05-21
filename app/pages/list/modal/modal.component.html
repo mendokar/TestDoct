@@ -1,5 +1,11 @@
-<StackLayout class="page" >
-    <Label horizontalAlignment="center" text="1 . Gif" textWrap="true" (tap)="viewData('gif')"></Label>
-    <Label horizontalAlignment="center" text="2 . Image" textWrap="true" (tap)="viewData('image')"></Label>
-    <Label horizontalAlignment="center" text="3 . Video" textWrap="true" (tap)="viewData('video')"></Label>    
-</StackLayout>
+<ScrollView>
+    <StackLayout class="page">
+        <Image *ngIf="_viewImage" [src]="_image"></Image>
+        <Gif *ngIf="_viewGif" [src]="_gif" height="auto"></Gif>
+        <GridLayout rows="*" columns="*,*,*" height="50%" style="vertical-align: bottom" width="100%">
+            <Button row="0" col="0" text="Image" (tap)="viewData('image')"></Button>
+            <Button row="0" col="1" text="Gif" (tap)="viewData('gif')"></Button>
+            <Button row="0" col="2" text="Video" (tap)="viewData('video')"></Button>
+        </GridLayout>
+    </StackLayout>
+</ScrollView>
